@@ -1,0 +1,303 @@
+/* Existing Font Faces */
+@font-face {
+    font-family: 'Liquid Crystal';
+    src: url('fonts/LiquidCrystal-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Stencil';
+    src: url('fonts/Stencil-Regular.ttf') format('truetype');
+}
+
+/* Existing Body Styles */
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    text-transform: none;
+}
+
+/* Existing Header Styles */
+header {
+    background-color: transparent;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.company-name {
+    font-family: 'Stencil', sans-serif;
+    color: rgb(243, 241, 241);
+    font-size: 0.5em;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.nav-bar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 10;
+    margin-left: 100px;
+}
+
+.nav-bar li {
+    margin: 0 10px;
+}
+
+.nav-bar a {
+    font-family: 'Liquid Crystal', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+}
+
+.nav-bar a:hover {
+    background-color: #64b8f4;
+    border-radius: 10px;
+}
+
+/* Existing Landing Page Styles */
+.landing-page {
+    background: url('photos/20240623_054602.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: changeBackground 20s infinite; 
+}
+
+@keyframes changeBackground {
+    0% { background: url('photos/phone.jpg') no-repeat center center fixed; }
+    25% { background: url('photos/code.jpg') no-repeat center center fixed; }
+    50% { background: url('photos/office.jpg') no-repeat center center fixed; }
+    75% { background: url('photos/20240623_054602.jpg') no-repeat center center fixed; }
+    100% { background: url('photos/tianyi-ma-WiONHd_zYI4-unsplash.jpg') no-repeat center center fixed; }
+}
+
+/* Existing Overlay and Sliding Text Styles */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliding-text {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+    height: 2em;
+    overflow: hidden;
+}
+
+.sliding-text p {
+    margin: 0;
+    animation: slide 9s infinite;
+}
+
+@keyframes slide {
+    0% { opacity: 0; transform: translateY(100%); }
+    10% { opacity: 1; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(0); }
+    40% { opacity: 0; transform: translateY(-100%); }
+    100% { opacity: 0; transform: translateY(-100%); }
+}
+
+/* Content Section */
+.content {
+    margin-top: 80px;
+    padding-bottom: 60px;
+}
+
+/* About Us Section */
+.about-us {
+    text-align: center;
+    background-size: cover;
+    background:url('photos/20240623_054602.jpg') no-repeat center center fixed;
+    opacity: 0;
+    width: 100%;
+    background-position: center;
+    height: 100%;
+    transition: opacity 2s, transform 2s;
+}
+
+.about-us.floating-animation {
+    opacity: 1;
+    transform: translateY(0);
+    animation: floatUp 2s forwards;
+}
+.about-us h2, .about-us p {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* New Specialists Section */
+.specialists {
+    padding: 50px 20px;
+    background: url(photos/office.jpg);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    animation: floatUp 2s forwards;
+}
+
+.specialist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.specialist-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.specialist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(100, 184, 244, 0.2);
+}
+
+.specialist-icon {
+    font-size: 2.5rem;
+    color: #64b8f4;
+    margin-bottom: 1.5rem;
+}
+
+.specialist-card h3 {
+    font-family: 'Liquid Crystal', sans-serif;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.specialist-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.specialist-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.specialist-features li {
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Liquid Crystal', sans-serif;
+    font-size: 0.9em;
+}
+
+.specialist-features li:last-child {
+    border-bottom: none;
+}
+
+/* Existing Footer Styles */
+.footer-content {
+    background:url(photos/code.jpg);
+    text-transform: none;
+    font-family: 'Liquid Crystal', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position:static;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: #fff;
+    display: inline-block;
+}
+
+.social-media a i {
+    margin-right: 5px;
+}
+
+.social-media a:hover {
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-bar {
+        margin-left: 20px;
+    }
+    
+    .specialist-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .specialists {
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-bar li {
+        margin: 5px 0;
+    }
+    
+    .sliding-text {
+        font-size: 1.5em;
+    }
+}
